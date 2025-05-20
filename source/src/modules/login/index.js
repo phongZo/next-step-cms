@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 import { Button, Form } from 'antd';
 

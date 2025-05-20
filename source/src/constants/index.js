@@ -111,8 +111,8 @@ export const categoryKind = {
 };
 
 export const appAccount = {
-    APP_USERNAME: process.env.REACT_APP_USERNAME,
-    APP_PASSWORD: process.env.REACT_APP_PASSWORD,
+    APP_USERNAME: process.env.REACT_APP_CLIENT_ID,
+    APP_PASSWORD: process.env.REACT_APP_CLIENT_SECRET,
 };
 
 export const GROUP_KIND_ADMIN = 1;

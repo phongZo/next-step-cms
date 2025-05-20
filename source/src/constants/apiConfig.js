@@ -1,4 +1,4 @@
-import { AppConstants, apiUrl, apiTenantUrl } from '.';
+import { apiUrl, apiTenantUrl } from '.';
 
 const baseHeader = {
     'Content-Type': 'application/json',
