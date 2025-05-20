@@ -143,7 +143,7 @@ const apiConfig = {
     },
     file: {
         upload: {
-            path: `${AppConstants.mediaRootUrl}v1/file/upload`,
+            path: `${apiUrl}v1/file/upload`,
             method: 'POST',
             headers: multipartFormHeader,
             isRequiredTenantId: true,

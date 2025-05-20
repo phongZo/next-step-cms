@@ -13,7 +13,6 @@ export const fixedPath = {
 export const brandName = 'CMS';
 
 export const appName = 'media-cms-app';
-export const appType = process.env.REACT_APP_TYPE;
 
 export const storageKeys = {
     USER_ACCESS_TOKEN: `${appName}-user-access-token`,

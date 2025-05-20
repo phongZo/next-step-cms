@@ -8,12 +8,11 @@ import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import InputTextField from '@components/common/form/InputTextField';
 import styles from './index.module.scss';
 import { accountActions } from '@store/actions';
-import useAuth from '@hooks/useAuth';
 import useFetch from '@hooks/useFetch';
 import useFetchAction from '@hooks/useFetchAction';
 import Title from 'antd/es/typography/Title';
 import { showErrorMessage } from '@services/notifyService';
-import { appAccount, brandName,ADMIN_LOGIN_TYPE, storageKeys, appType } from '@constants';
+import { appAccount, brandName, storageKeys } from '@constants';
 import { commonMessage } from '@locales/intl';
 import { Buffer } from 'buffer';
 import useTranslate from '@hooks/useTranslate';
@@ -26,7 +25,7 @@ const message = defineMessages({
     login: 'Login',
     copyRight: '{brandName} - © Copyright {year}. All Rights Reserved',
     loginFail: 'Sai tên đăng nhập hoặc mật khẩu !!!',
-    notFound : 'Không tìm thấy tài khoản này trong app',
+    notFound: 'Không tìm thấy tài khoản này trong app',
     verifyFailOTP: 'Mã OTP không đúng!!!',
     systemError: 'Lỗi hệ thống!',
     fail: 'Có lỗi xảy ra khi đăng nhập',
@@ -35,7 +34,6 @@ const message = defineMessages({
     otp: 'OTP',
     cancel: 'Hủy',
 });
-
 
 const LoginPage = () => {
     const intl = useIntl();
@@ -59,11 +57,11 @@ const LoginPage = () => {
 
     const onFinish = (values) => {
         executeSSO({
-            data: { ...values, app: appType },
+            data: { ...values },
             onCompleted: (res) => {
                 if (res.data.isMfaEnable == false) {
                     execute({
-                        data: { ...values, app: appType },
+                        data: { ...values },
                         onCompleted: (res) => {
                             handleLoginSuccess(res);
                         },
