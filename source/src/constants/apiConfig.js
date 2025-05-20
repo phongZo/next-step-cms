@@ -1,4 +1,4 @@
-import { AppConstants, apiUrl, apiTenantUrl } from '.';
+import { apiUrl, apiTenantUrl } from '.';
 
 const baseHeader = {
     'Content-Type': 'application/json',
@@ -26,7 +26,7 @@ const apiConfig = {
             headers: baseHeader,
         },
         getProfile: {
-            baseURL: `${apiUrl}v1/career/profile`,
+            baseURL: `${apiUrl}v1/account/profile`,
             method: 'GET',
             headers: baseHeader,
         },

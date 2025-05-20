@@ -12,7 +12,7 @@ export const fixedPath = {
 
 export const brandName = 'CMS';
 
-export const appName = 'media-cms-app';
+export const appName = 'next-step';
 
 export const storageKeys = {
     USER_ACCESS_TOKEN: `${appName}-user-access-token`,
@@ -21,7 +21,6 @@ export const storageKeys = {
     TENANT_HEADER: `X-tenant`,
     TENANT_API_URL: `${appName}-${process.env.REACT_APP_ENV}-tenant-api-url`,
 };
-
 
 export const AppConstants = {
     apiRootUrl: process.env.REACT_APP_API,
@@ -112,8 +111,8 @@ export const categoryKind = {
 };
 
 export const appAccount = {
-    APP_USERNAME: process.env.REACT_APP_USERNAME,
-    APP_PASSWORD: process.env.REACT_APP_PASSWORD,
+    APP_USERNAME: process.env.REACT_APP_CLIENT_ID,
+    APP_PASSWORD: process.env.REACT_APP_CLIENT_SECRET,
 };
 
 export const GROUP_KIND_ADMIN = 1;
@@ -142,4 +141,4 @@ export const SettingTypes = {
 };
 
 export const ADMIN_LOGIN_TYPE = 'password';
-
+export const GRANT_TYPE = process.env.REACT_APP_GRANT_TYPE;
