@@ -1,4 +1,4 @@
-REACT_APP_API = https://auth-ilms.thsolution.net/
+REACT_APP_API = https://api-next-step.plsolution.online/
 REACT_APP_API_MEDIA = https://media-ilms.thsolution.net/
 REACT_APP_API_AVATAR = https://api-sso.thsolution.net/
 REACT_APP_PORTAL_VIDEO = https://vbook.thsolution.net/

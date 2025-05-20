@@ -1,4 +1,5 @@
 import Layout from '@/components/layouts/Layout';
+import React from 'react';
 
 import styles from './Forbidden.module.scss';
 

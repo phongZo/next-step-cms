@@ -36,12 +36,6 @@ const apiConfig = {
             headers: baseHeader,
             permissionCode: 'ACC_U_PROFILE_AD',
         },
-        getById: {
-            baseURL: `${apiUrl}v1/account/get/:id`,
-            method: 'GET',
-            headers: baseHeader,
-            permissionCode: 'ACC_V',
-        },
         refreshToken: {
             baseURL: `${apiUrl}v1/account/refresh_token`,
             method: 'POST',
@@ -57,6 +51,47 @@ const apiConfig = {
             method: 'PUT',
             headers: baseHeader,
             isRequiredTenantId: true,
+        },
+        createAdmin: {
+            baseURL: `${apiUrl}v1/account/create_admin`,
+            method: 'POST',
+            headers: baseHeader,
+            permissionCode: 'ACC_C_AD',
+        },
+        delete: {
+            baseURL: `${apiUrl}v1/account/delete/:id`,
+            method: 'DELETE',
+            headers: baseHeader,
+            permissionCode: 'ACC_D',
+        },
+        forgetPassword: {
+            baseURL: `${apiUrl}v1/account/forget-password`,
+            method: 'POST',
+            headers: baseHeader,
+        },
+        getById: {
+            baseURL: `${apiUrl}v1/account/get/:id`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'ACC_V',
+        },
+        profile: {
+            baseURL: `${apiUrl}v1/account/profile`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'ACC_V',
+        },
+        requestForgetPassword: {
+            baseURL: `${apiUrl}v1/account/request-forget-password`,
+            method: 'POST',
+            headers: baseHeader,
+            permissionCode: 'ACC_C',
+        },
+        updateAdmin: {
+            baseURL: `${apiUrl}v1/account/update_admin`,
+            method: 'PUT',
+            headers: baseHeader,
+            permissionCode: 'ACC_U_AD',
         },
     },
     user: {
@@ -95,6 +130,16 @@ const apiConfig = {
             headers: baseHeader,
             permissionCode: 'ACC_D',
         },
+        login: {
+            baseURL: `${apiUrl}v1/account/login`,
+            method: `POST`,
+            headers: baseHeader,
+        },
+        signup: {
+            baseURL: `${apiUrl}v1/account/login`,
+            method: `POST`,
+            headers: baseHeader,
+        },
     },
     file: {
         upload: {
@@ -108,34 +153,46 @@ const apiConfig = {
     },
     post: {
         getList: {
-            baseURL: `${apiUrl}api/posts/list`,
+            baseURL: `${apiUrl}api/post/list`,
             method: `GET`,
             headers: baseHeader,
+            permissionCode: 'POST_L',
         },
         getById: {
-            baseURL: `${apiUrl}api/posts/get/:id`,
+            baseURL: `${apiUrl}api/post/get/:id`,
             method: `GET`,
             headers: baseHeader,
+            permissionCode: 'POST_V',
         },
         create: {
-            baseURL: `${apiUrl}api/posts/create`,
+            baseURL: `${apiUrl}api/post/create`,
             method: `POST`,
             headers: baseHeader,
+            permissionCode: 'POST_C',
         },
         update: {
-            baseURL: `${apiUrl}api/posts/update`,
+            baseURL: `${apiUrl}api/post/update`,
             method: `PUT`,
             headers: baseHeader,
+            permissionCode: 'POST_U',
         },
         delete: {
-            baseURL: `${apiUrl}api/posts/:id`,
+            baseURL: `${apiUrl}api/post/:id`,
             method: `DELETE`,
             headers: baseHeader,
+            permissionCode: 'POST_D',
         },
-        autocomplete: {
-            baseURL: `${apiUrl}api/posts/auto-complete`,
+        getClientList: {
+            baseURL: `${apiUrl}api/post/client-list`,
             method: `GET`,
             headers: baseHeader,
+            permissionCode: 'POST_L',
+        },
+        getClientById: {
+            baseURL: `${apiUrl}api/post/client-get/:id`,
+            method: `GET`,
+            headers: baseHeader,
+            permissionCode: 'POST_V',
         },
     },
     category: {
@@ -323,6 +380,146 @@ const apiConfig = {
             method: 'GET',
             headers: baseHeader,
             isRequiredTenantId: true,
+        },
+    },
+    candidate: {
+        getList: {
+            baseURL: `${apiUrl}v1/candidate/list`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'CA_L',
+        },
+        getById: {
+            baseURL: `${apiUrl}v1/candidate/get/:id`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'CA_V',
+        },
+        signup: {
+            baseURL: `${apiUrl}v1/candidate/signup`,
+            method: 'POST',
+            headers: baseHeader,
+            permissionCode: 'CA_C',
+        },
+        updateProfile: {
+            baseURL: `${apiUrl}v1/candidate/update-profile`,
+            method: 'PUT',
+            headers: baseHeader,
+            permissionCode: 'CA_U',
+        },
+        delete: {
+            baseURL: `${apiUrl}v1/candidate/delete/:id`,
+            method: 'DELETE',
+            headers: baseHeader,
+            permissionCode: 'CA_D',
+        },
+        profile: {
+            baseURL: `${apiUrl}v1/candidate/profile`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'CA_V',
+        },
+    },
+    company: {
+        getList: {
+            baseURL: `${apiUrl}v1/company/list`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'CO_L',
+        },
+        getById: {
+            baseURL: `${apiUrl}v1/company/get/:id`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'CO_V',
+        },
+        create: {
+            baseURL: `${apiUrl}v1/company/create`,
+            method: 'POST',
+            headers: baseHeader,
+            permissionCode: 'CO_C',
+        },
+        update: {
+            baseURL: `${apiUrl}v1/company/update`,
+            method: 'PUT',
+            headers: baseHeader,
+            permissionCode: 'CO_U',
+        },
+        delete: {
+            baseURL: `${apiUrl}v1/company/delete/:id`,
+            method: 'DELETE',
+            headers: baseHeader,
+            permissionCode: 'CO_D',
+        },
+    },
+    employee: {
+        getList: {
+            baseURL: `${apiUrl}v1/employee/list`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'EM_L',
+        },
+        getById: {
+            baseURL: `${apiUrl}v1/employee/get/:id`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'EM_V',
+        },
+        create: {
+            baseURL: `${apiUrl}v1/employee/create`,
+            method: 'POST',
+            headers: baseHeader,
+            permissionCode: 'EM_C',
+        },
+        update: {
+            baseURL: `${apiUrl}v1/employee/update`,
+            method: 'PUT',
+            headers: baseHeader,
+            permissionCode: 'EM_U',
+        },
+        delete: {
+            baseURL: `${apiUrl}v1/employee/delete/:id`,
+            method: 'DELETE',
+            headers: baseHeader,
+            permissionCode: 'EM_D',
+        },
+    },
+    nation: {
+        getList: {
+            baseURL: `${apiUrl}v1/nation/list`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'NATION_L',
+        },
+        getById: {
+            baseURL: `${apiUrl}v1/nation/get/:id`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'NATION_V',
+        },
+        create: {
+            baseURL: `${apiUrl}v1/nation/create`,
+            method: 'POST',
+            headers: baseHeader,
+            permissionCode: 'NATION_C',
+        },
+        update: {
+            baseURL: `${apiUrl}v1/nation/update`,
+            method: 'PUT',
+            headers: baseHeader,
+            permissionCode: 'NATION_U',
+        },
+        delete: {
+            baseURL: `${apiUrl}v1/nation/delete/:id`,
+            method: 'DELETE',
+            headers: baseHeader,
+            permissionCode: 'NATION_D',
+        },
+        autocomplete: {
+            baseURL: `${apiUrl}v1/nation/auto-complete`,
+            method: 'GET',
+            headers: baseHeader,
+            permissionCode: 'NATION_A',
         },
     },
 };
