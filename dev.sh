@@ -1,8 +1,8 @@
 #!/bin/bash
-SERVER_DEPLOY=85.215.157.153
-TARGET_DIR=/opt/deploy/qrcode/cms
-APP_ID=qrcode-admin
-PORT=4000
+SERVER_DEPLOY=192.168.1.5
+TARGET_DIR=/opt/deploy/nextstep/cms
+APP_ID=nextstep-cms
+PORT=4001
 
 # Build source
 echo "--> build source..."
