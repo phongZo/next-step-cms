@@ -1,4 +1,4 @@
-REACT_APP_API = https://elms-auth.developteam.net/
+REACT_APP_API = https://api-next-step.plsolution.online/
 REACT_APP_API_MEDIA = https://org-media-template.developteam.net/
 REACT_APP_ENV = dev
 REACT_APP_API_TENANT = https://elms-tenant-api.developteam.net/

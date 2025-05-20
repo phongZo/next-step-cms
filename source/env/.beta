@@ -1,4 +1,4 @@
-REACT_APP_API = https://elms-auth.developteam.net/
+REACT_APP_API = https:/api-next-step.plsolution.online/
 REACT_APP_API_MEDIA = https://org-media-template.developteam.net/
 REACT_APP_PORTAL_VIDEO = https://portal-vbook.itz.io.vn/
 REACT_APP_ENV = dev
