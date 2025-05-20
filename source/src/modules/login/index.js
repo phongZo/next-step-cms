@@ -12,7 +12,7 @@ import useFetch from '@hooks/useFetch';
 import useFetchAction from '@hooks/useFetchAction';
 import Title from 'antd/es/typography/Title';
 import { showErrorMessage } from '@services/notifyService';
-import { appAccount, brandName, storageKeys } from '@constants';
+import { appAccount, brandName, GRANT_TYPE, storageKeys } from '@constants';
 import { commonMessage } from '@locales/intl';
 import { Buffer } from 'buffer';
 import useTranslate from '@hooks/useTranslate';
@@ -38,17 +38,11 @@ const message = defineMessages({
 const LoginPage = () => {
     const intl = useIntl();
     const translate = useTranslate();
-    const [isMfaSSO, setIsMfaSSO] = useState(null);
-    const [urlSSO, setUrlSSO] = useState(null);
-    const [inforUser, setInforUser] = useState({});
 
     const base64Credentials = Buffer.from(`${appAccount.APP_USERNAME}:${appAccount.APP_PASSWORD}`).toString('base64');
     const { execute, loading } = useFetch({
         ...apiConfig.account.loginBasic,
         authorization: `Basic ${base64Credentials}`,
-    });
-    const { execute: executeSSO, loading: loadingSSO } = useFetch({
-        ...apiConfig.account.loginSSO,
     });
 
     const { execute: executeGetProfile } = useFetchAction(accountActions.getProfile, {
@@ -56,32 +50,25 @@ const LoginPage = () => {
     });
 
     const onFinish = (values) => {
-        executeSSO({
-            data: { ...values },
+        const payload = {
+            username: values.username,
+            password: values.password,
+            grant_type: GRANT_TYPE,
+        };
+        execute({
+            data: payload,
             onCompleted: (res) => {
-                if (res.data.isMfaEnable == false) {
-                    execute({
-                        data: { ...values },
-                        onCompleted: (res) => {
-                            handleLoginSuccess(res);
-                        },
-                        onError: (err) => {
-                            if (err?.response?.data?.message == 'Not found accountApp') {
-                                showErrorMessage(translate.formatMessage(message.notFound));
-                            } else {
-                                showErrorMessage(translate.formatMessage(message.loginFail));
-                            }
-                        },
-                    });
+                handleLoginSuccess(res);
+            },
+            onError: (err) => {
+                if (err?.response?.data?.message === 'Not found accountApp') {
+                    const errorMsg = translate.formatMessage(message.notFound);
+                    showErrorMessage(errorMsg);
                 } else {
-                    setIsMfaSSO(res.data.isMfa);
-                    if (res.data.qrUrl) {
-                        setUrlSSO(res.data.qrUrl);
-                    }
-                    setInforUser(values);
+                    const errorMsg = translate.formatMessage(message.loginFail);
+                    showErrorMessage(errorMsg);
                 }
             },
-            onError: () => showErrorMessage(translate.formatMessage(message.loginFail)),
         });
     };
 

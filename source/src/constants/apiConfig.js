@@ -26,7 +26,7 @@ const apiConfig = {
             headers: baseHeader,
         },
         getProfile: {
-            baseURL: `${apiUrl}v1/career/profile`,
+            baseURL: `${apiUrl}v1/account/profile`,
             method: 'GET',
             headers: baseHeader,
         },
