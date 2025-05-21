@@ -1,6 +1,3 @@
-import apiConfig from '@constants/apiConfig';
-import UserAdminListPage from '.';
-import UserAdminSavePage from './UserAdminSavePage';
 import UserListPage from './users';
 import UserSavePage from './users/UserSavePage';
 import { commonMessage } from '@locales/intl';
@@ -14,7 +11,7 @@ const paths = {
     adminsLeaderSavePage: '/admins-leader/:id',
     userListPage: '/user',
     userSavePage: '/user/:id',
-    addressListPage:'/user/address',
+    addressListPage: '/user/address',
     addressSavePage: '/user/address/:id',
 };
 export default {
@@ -86,7 +83,10 @@ export default {
             renderBreadcrumbs: (messages, t, title, options = {}) => {
                 return [
                     { breadcrumbName: t.formatMessage(messages.user), path: paths.userListPage },
-                    { breadcrumbName: t.formatMessage(commonMessage.address), path: paths.addressListPage+`?userId=${options.userId}` },
+                    {
+                        breadcrumbName: t.formatMessage(commonMessage.address),
+                        path: paths.addressListPage + `?userId=${options.userId}`,
+                    },
                     { breadcrumbName: title },
                 ];
             },

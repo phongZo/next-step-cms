@@ -1,8 +1,6 @@
 import React from 'react';
-import { UsergroupAddOutlined, ControlOutlined, InboxOutlined } from '@ant-design/icons';
 import routes from '@routes';
 import { FormattedMessage } from 'react-intl';
-import apiConfig from './apiConfig';
 import { IconSettings } from '@tabler/icons-react';
 
 export const navMenuConfig = [
@@ -12,10 +10,20 @@ export const navMenuConfig = [
         icon: <IconSettings size={16} />,
         // permission: apiConfig.category.getList.baseURL,
         children: [
+            // {
+            //     label: <FormattedMessage defaultMessage="Cài đặt" />,
+            //     key: 'setting',
+            //     path: routes.settingsPage.path,
+            // },
             {
-                label: <FormattedMessage defaultMessage="Cài đặt" />,
-                key: 'setting',
-                path: routes.settingsPage.path,
+                label: <FormattedMessage defaultMessage="Quản trị viên" />,
+                key: 'admins',
+                path: routes.adminListPage.path,
+            },
+            {
+                label: <FormattedMessage defaultMessage="Quyền" />,
+                key: 'group-permission',
+                path: routes.groupPermissionPage.path,
             },
         ],
     },

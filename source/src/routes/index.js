@@ -3,7 +3,7 @@ import PageNotAllowed from '@components/common/page/PageNotAllowed';
 import LoginPage from '@modules/login/index';
 import Dashboard from '@modules/entry';
 import ProfilePage from '@modules/profile/index';
-import adminsRoutes from '@modules/user/routes';
+import adminsRoutes from '@modules/admin/routes';
 import newsRoutes from '@modules/news/routes';
 import nationRoutes from '@modules/nation/routes';
 import GroupPermissionListPage from '@modules/groupPermission';
@@ -11,6 +11,7 @@ import PermissionSavePage from '@modules/groupPermission/PermissionSavePage';
 import SettingListPage from '@modules/listSetting';
 import SettingSavePage from '@modules/listSetting/SettingSavePage';
 import settingsRoutes from '@modules/settings/routes';
+import SettingPage from '@modules/settings';
 
 /*
 	auth
@@ -33,7 +34,7 @@ const routes = {
     },
     settingPage: {
         path: '/settings',
-        component: Dashboard,
+        component: SettingPage,
         auth: true,
         title: 'Setting',
     },
@@ -61,9 +62,9 @@ const routes = {
         auth: true,
         title: 'Profile page',
     },
-    listSettingsPage:{
-        path:'/settings',
-        component:SettingListPage,
+    listSettingsPage: {
+        path: '/settings',
+        component: SettingListPage,
         auth: true,
         title: 'Settings page',
     },

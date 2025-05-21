@@ -93,6 +93,12 @@ const apiConfig = {
             headers: baseHeader,
             permissionCode: 'ACC_U_AD',
         },
+        getList: {
+            baseURL: `${apiUrl}v1/account/list-admin`,
+            method: `GET`,
+            headers: baseHeader,
+            permissionCode: 'ACC_L',
+        },
     },
     user: {
         getList: {

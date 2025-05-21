@@ -52,11 +52,11 @@ const ValidateAccess = ({
                 try {
                     return initRoutes.filter(Boolean)[0].children.filter(Boolean)[0].path;
                 } catch (error) {
-                    return routes.homePage.path;
+                    return routes.adminListPage.path;
                 }
             }
 
-            return routes.homePage.path;
+            return routes.adminListPage.path;
         }
 
         if (authRequire === accessRouteTypeEnum.REQUIRE_LOGIN && !isAuthenticated) {
