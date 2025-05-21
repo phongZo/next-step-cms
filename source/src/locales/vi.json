@@ -177,5 +177,18 @@
     "locales.intl.commonMessage.hideSystemSettings": "Ẩn cài đặt hệ thống",
     "locales.intl.commonMessage.timeZone": "Múi giờ",
     "locales.intl.commonMessage.money": "Tiền tệ",
-    "locales.intl.commonMessage.system": "Hệ thống"
+    "locales.intl.commonMessage.system": "Hệ thống",
+    "locales.intl.commonMessage.usernameExisted": "Tên đăng nhập đã tồn tại",
+    "locales.intl.commonMessage.emailExisted": "Email đã tồn tại",
+    "locales.intl.commonMessage.phoneExisted": "Số điện thoại đã tồn tại",
+    "locales.intl.commonMessage.required": "Bắt buộc",
+    "constants.menuConfig.3529808335": "Quản lý hệ thống",
+    "locales.intl.commonMessage.admins": "Quản trị viên",
+    "hook.useListBase.tableColumn.action": "Hành động",
+    "locales.intl.commonMessage.noData": "Không có dữ liệu",
+    "locales.intl.commonMessage.username": "Username",
+    "locales.intl.commonMessage.email": "Email",
+    "locales.intl.commonMessage.avatar": "Avatar",
+    "locales.intl.commonMessage.groupPermission": "Nhóm quyền",
+    "hooks.useSaveBase.updateSuccess": "Cập nhật {objectName} thành công"
 }

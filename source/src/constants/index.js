@@ -24,7 +24,7 @@ export const storageKeys = {
 
 export const AppConstants = {
     apiRootUrl: process.env.REACT_APP_API,
-    contentRootUrl: `${process.env.REACT_APP_API_MEDIA}v1/file/download`,
+    contentRootUrl: `${process.env.REACT_APP_API}v1/file/download`,
     mediaRootUrl: `${process.env.REACT_APP_API_MEDIA}`,
     langKey: 'vi',
 };
@@ -142,3 +142,12 @@ export const SettingTypes = {
 
 export const ADMIN_LOGIN_TYPE = 'password';
 export const GRANT_TYPE = process.env.REACT_APP_GRANT_TYPE;
+
+export const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+export const STRONG_PASSWORD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+export const PHONE_REGEX = /^\d+$/;
+
+export const PASSWORD_MIN_LENGTH = 8;
+export const PHONE_MIN_LENGTH = 10;
+export const PHONE_MAX_LENGTH = 10;
+export const ERROR_ACCOUNT_EXIST = 'ERROR-ACCOUNT-0001';
