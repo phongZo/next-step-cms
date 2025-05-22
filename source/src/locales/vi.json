@@ -190,5 +190,15 @@
     "locales.intl.commonMessage.email": "Email",
     "locales.intl.commonMessage.avatar": "Avatar",
     "locales.intl.commonMessage.groupPermission": "Nhóm quyền",
-    "hooks.useSaveBase.updateSuccess": "Cập nhật {objectName} thành công"
+    "hooks.useSaveBase.updateSuccess": "Cập nhật {objectName} thành công",
+    "hooks.useSaveBase.createSuccess": "Thêm {objectName} thành công",
+    "hook.useListBase.tableColumn.status.active": "Hoạt động",
+    "hook.useListBase.tableColumn.status.title": "Trạng thái",
+    "hook.useListBase.tableColumn.status.pending": "Đang chờ",
+    "constants.menuConfig.3525936698": "Tin tức",
+    "components.common.elements.form.BaseTooltip.edit": "Xóa {objectName}",
+    "components.common.elements.form.BaseTooltip.delete": "Sửa {objectName}",
+    "hook.useListBase.deleteConfirm.title": "Bạn có chắc chắn muốn xóa {objectName} này không?",
+    "hook.useListBase.deleteConfirm.ok": "Có",
+    "hook.useListBase.deleteConfirm.cancel": "Không"
 }

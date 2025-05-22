@@ -13,12 +13,11 @@ import { Modal, Button, Divider, Tag } from 'antd';
 import { DeleteOutlined, LockOutlined, CheckOutlined, EditOutlined } from '@ant-design/icons';
 
 import { defineMessages, useIntl } from 'react-intl';
-import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ActionBar from '@components/common/elements/ActionBar';
 import useFetch from './useFetch';
 import useNotification from './useNotification';
 import SearchForm from '@components/common/form/SearchForm';
-import HasPermission from '@components/common/elements/HasPermission';
 import useAuth from './useAuth';
 import { validatePermission } from '@utils';
 import { BaseTooltip } from '@components/common/form/BaseTooltip';
