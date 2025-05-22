@@ -1,7 +1,7 @@
 import BaseTable from '@components/common/table/BaseTable';
 import apiConfig from '@constants/apiConfig';
 import useListBase from '@hooks/useListBase';
-import { Button, Modal, Tag } from 'antd';
+import { Button, Empty, Modal, Tag } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { EyeOutlined, UserOutlined } from '@ant-design/icons';
 import AvatarField from '@components/common/form/AvatarField';
@@ -17,6 +17,8 @@ import { commonMessage } from '@locales/intl';
 import { convertUtcToLocalTime } from '@utils';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
+import { IconPin } from '@tabler/icons-react';
+import { IconPinnedOff } from '@tabler/icons-react';
 const message = defineMessages({
     objectName: 'news',
 });
@@ -117,6 +119,12 @@ const NewsListPage = () => {
     const columns = [
         {
             title: '#',
+            width: '30px',
+            align: 'center',
+            render: (text, record, index) => index + 1,
+        },
+        {
+            title: translate.formatMessage(commonMessage.avatar),
             dataIndex: 'avatar',
             align: 'center',
             width: 100,
@@ -143,7 +151,7 @@ const NewsListPage = () => {
         },
         {
             title: <FormattedMessage defaultMessage="Created Date" />,
-            width: 180,
+            width: 160,
             dataIndex: 'createdDate',
             render: (createdDate) => {
                 const createdDateLocal = convertUtcToLocalTime(createdDate, DEFAULT_FORMAT, DEFAULT_FORMAT);
@@ -160,7 +168,7 @@ const NewsListPage = () => {
         //         return <Icon onClick={() => handleUpdatePinTop(dataRow)} size={18} />;
         //     },
         // },
-        mixinFuncs.renderStatusColumn({ width: '90px' }),
+        mixinFuncs.renderStatusColumn({ width: '100px' }),
         mixinFuncs.renderActionColumn(
             {
                 preview: {
@@ -183,6 +191,9 @@ const NewsListPage = () => {
             placeholder: translate.formatMessage(commonMessage.category),
             type: FieldTypes.SELECT,
             options: categories,
+            notFoundContent: (
+                <Empty className="scale-50 p-5" description={translate.formatMessage(commonMessage.noData)} />
+            ),
         },
         {
             key: 'status',
@@ -215,6 +226,10 @@ const NewsListPage = () => {
                         dataSource={data}
                         loading={loading || getCategoriesLoading || updateNewsPinLoading}
                         pagination={pagination}
+                        onRow={(record, index) => ({
+                            style: { backgroundColor: index % 2 === 1 ? '#fefefe' : '#ffffff' },
+                        })}
+                        locale={{ emptyText: <Empty description={translate.formatMessage(commonMessage.noData)} /> }}
                     />
                 }
             />
