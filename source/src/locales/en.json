@@ -178,5 +178,8 @@
     "hook.useListBase.deleteConfirm.ok": "Yes",
     "hook.useListBase.deleteConfirm.cancel": "No",
     "constants.menuConfig.4019622365": "Account management",
-    "hooks.useSaveBase.ok": "OK"
+    "hooks.useSaveBase.ok": "OK",
+    "locales.intl.commonMessage.candidate": "Candidate",
+    "constants.menuConfig.587030821": "Candidate",
+    "locales.intl.commonMessage.jobTitle": "Job title"
 }

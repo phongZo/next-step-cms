@@ -12,6 +12,7 @@ import SettingListPage from '@modules/listSetting';
 import SettingSavePage from '@modules/listSetting/SettingSavePage';
 import settingsRoutes from '@modules/settings/routes';
 import SettingPage from '@modules/settings';
+import candidateRoutes from '@modules/candidate/routes';
 
 /*
 	auth
@@ -78,6 +79,7 @@ const routes = {
     ...newsRoutes,
     ...nationRoutes,
     ...settingsRoutes,
+    ...candidateRoutes,
     // keep this at last
     notFound: {
         component: PageNotFound,

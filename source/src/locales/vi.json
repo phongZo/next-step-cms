@@ -203,5 +203,8 @@
     "hook.useListBase.deleteConfirm.cancel": "Không",
     "modules.news.NewsForm.3510152489": "Danh mục tin tức",
     "hooks.useSaveBase.closeTitle": "Bạn có chắc chắn muốn đóng trang này?",
-    "hooks.useSaveBase.ok": "Có"
+    "hooks.useSaveBase.ok": "Có",
+    "locales.intl.commonMessage.candidate": "Ứng viên",
+    "constants.menuConfig.587030821": "Ứng viên",
+    "locales.intl.commonMessage.jobTitle": "Công việc"
 }
