@@ -66,4 +66,5 @@ export const commonMessage = defineMessages({
     emailExisted: 'Email existed',
     phoneExisted: 'Phone existed',
     required: 'Required',
+    create: 'Create',
 });

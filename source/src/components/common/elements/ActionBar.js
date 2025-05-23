@@ -8,6 +8,8 @@ import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
 import styles from './ActionBar.module.scss';
 import HasPermission from './HasPermission';
 import { defineMessages } from 'react-intl';
+import { selectAppLocale } from '@selectors/app';
+import { useSelector } from 'react-redux';
 
 const message = defineMessages({
     create: 'Add new',
@@ -29,6 +31,8 @@ function ActionBar({
     buttons,
 }) {
     const intl = useIntl();
+    const locale = useSelector(selectAppLocale);
+
     const onBulkDeleteButtonClick = () => {
         Modal.confirm({
             title: intl.formatMessage(message.bulkDeleteTitle, { objectName }),
@@ -65,7 +69,7 @@ function ActionBar({
                 </Link>
             </Col>
         ));
-    }, [buttons, createLink, createPermission]);
+    }, [buttons, createLink, createPermission, locale]);
 
     return (
         <Row wrap justify="end" gutter={12} className={styles.actionBar}>

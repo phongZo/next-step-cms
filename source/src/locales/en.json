@@ -50,7 +50,7 @@
     "hooks.useNotification.warning": "Warning",
     "hooks.useSaveBase.cancel": "Cancel",
     "hooks.useSaveBase.closeSuccess": "Close {objectName} successfully",
-    "hooks.useSaveBase.closeTitle": "Bạn có muốn đóng trang này?",
+    "hooks.useSaveBase.closeTitle": "Are you sure to close this page ?",
     "hooks.useSaveBase.create": "Create",
     "hooks.useSaveBase.createSuccess": "Create {objectName} success",
     "hooks.useSaveBase.title": "{action, select, true {Edit} other {New}} {objectName}",
@@ -140,7 +140,7 @@
     "modules.news.NewsForm.1756106276": "Status",
     "modules.news.NewsForm.2018760484": "Avatar",
     "modules.news.NewsForm.3374163063": "Description",
-    "modules.news.NewsForm.3510152489": "Danh mục tin tức",
+    "modules.news.NewsForm.3510152489": "News category",
     "modules.news.NewsSavePage.3834517896": "News",
     "modules.news.NewsSavePage.objectName": "news",
     "modules.news.category.CategorySavePage.home": "Home",
@@ -176,5 +176,7 @@
     "components.common.elements.form.BaseTooltip.delete": "Delete {objectName}",
     "hook.useListBase.deleteConfirm.title": "Are you sure you want to delete this {objectName}?",
     "hook.useListBase.deleteConfirm.ok": "Yes",
-    "hook.useListBase.deleteConfirm.cancel": "No"
+    "hook.useListBase.deleteConfirm.cancel": "No",
+    "constants.menuConfig.4019622365": "Account management",
+    "hooks.useSaveBase.ok": "OK"
 }

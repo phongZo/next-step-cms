@@ -1,30 +1,35 @@
-import { Card, Col, Form, Row, Space } from 'antd';
+import { Card, Col, Empty, Row } from 'antd';
 import React, { useEffect, useState } from 'react';
 import useBasicForm from '@hooks/useBasicForm';
 import TextField from '@components/common/form/TextField';
 import CropImageField from '@components/common/form/CropImageField';
-import { AppConstants } from '@constants';
+import { AppConstants, NEWS_OPTIONS } from '@constants';
 import useFetch from '@hooks/useFetch';
 import apiConfig from '@constants/apiConfig';
 import SelectField from '@components/common/form/SelectField';
 import useTranslate from '@hooks/useTranslate';
 import { statusOptions } from '@constants/masterData';
 import RichTextField from '@components/common/form/RichTextField';
-import CheckboxField from '@components/common/form/CheckboxField';
 import './NewsForm.scss';
 import { FormattedMessage } from 'react-intl';
 import { BaseForm } from '@components/common/form/BaseForm';
-import AutoCompleteField from '@components/common/form/AutoCompleteField';
-const NewsForm = ({ formId, actions, dataDetail, onSubmit, setIsChangedFormValues, categories, isEditing }) => {
+import { commonMessage } from '@locales/intl';
+const NewsForm = ({ formId, actions, dataDetail, onSubmit, setIsChangedFormValues, isEditing }) => {
     const { execute: executeUpFile } = useFetch(apiConfig.file.upload);
     const [avatarUrl, setAvatarUrl] = useState(null);
     const [bannerUrl, setBannerUrl] = useState(null);
     const translate = useTranslate();
     const statusValues = translate.formatKeys(statusOptions, ['label']);
+    const newsValues = translate.formatKeys(NEWS_OPTIONS, ['label']);
 
     const { form, mixinFuncs, onValuesChange } = useBasicForm({
         onSubmit,
         setIsChangedFormValues,
+    });
+
+    const { execute: executeGetCategories, data: categories } = useFetch(apiConfig.category.getList, {
+        immediate: true,
+        mappingData: (res) => res.data.content || [],
     });
 
     const uploadFile = (file, onSuccess, onError, setImageUrl) => {
@@ -101,12 +106,10 @@ const NewsForm = ({ formId, actions, dataDetail, onSubmit, setIsChangedFormValue
                     <Col span={24}>
                         <TextField required label={<FormattedMessage defaultMessage="Title" />} name="title" />
                     </Col>
-                    
                 </Row>
                 <Row gutter={10}>
-
                     <Col span={12}>
-                        <AutoCompleteField
+                        {/* <AutoCompleteField
                             required
                             label={<FormattedMessage defaultMessage="Danh mục tin tức" />}
                             name="categoryId"
@@ -114,6 +117,14 @@ const NewsForm = ({ formId, actions, dataDetail, onSubmit, setIsChangedFormValue
                             mappingOptions={(item) => ({ value: item.id, label: item.name })}
                             initialSearchParams={{ kind: 1 }}
                             searchParams={(text) => ({ fullName: text })}
+                        /> */}
+                        <SelectField
+                            required
+                            requiredMsg={translate.formatMessage(commonMessage.required)}
+                            allowClear={false}
+                            label={<FormattedMessage defaultMessage="Danh mục tin tức" />}
+                            options={newsValues}
+                            notFoundContent={<Empty description={translate.formatMessage(commonMessage.noData)} />}
                         />
                     </Col>
                     <Col span={12}>
