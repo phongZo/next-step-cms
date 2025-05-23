@@ -5,18 +5,18 @@ TIMEZONE = 'GMT+7'
 APP_BOOT_TIME_SECOND = 5
 SLACK_CHANNEL_NAME = 'GMQ6JQ1FT'
 
-TARTGET_FOLDER_DEPLOY = '/opt/deploy/nails'
-APP_NAME = 'mgr-cms'
+TARTGET_FOLDER_DEPLOY = '/opt/deploy/nextstep/cms'
+APP_NAME = 'nextstep-cms'
 
-HOST_DEV = '192.168.201.17'
-APP_DEV_PORT = 1000
+HOST_DEV = '192.168.1.5'
+APP_DEV_PORT = 4001
 TARTGET_BRANCH_DEPLOY = 'dev'
 
 node {
     try {
-        if (_BRANCH_NAME.matches(TARTGET_BRANCH_DEPLOY)) {
-            notifyBuild('STARTED', SLACK_CHANNEL_NAME)
-        }
+        // if (_BRANCH_NAME.matches(TARTGET_BRANCH_DEPLOY)) {
+        //     notifyBuild('STARTED', SLACK_CHANNEL_NAME)
+        // }
 
         stage('Checkout source') {
             checkout scm
@@ -88,7 +88,7 @@ node {
                               "\n*Change Log (DESC):*\n${getChangeLog()}"
 
             sleep(APP_BOOT_TIME_SECOND)
-            notifyBuild(currentBuild.result, SLACK_CHANNEL_NAME, buildDetail)
+            //notifyBuild(currentBuild.result, SLACK_CHANNEL_NAME, buildDetail)
         }
     }
 }
