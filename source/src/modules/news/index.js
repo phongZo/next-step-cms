@@ -1,7 +1,7 @@
 import BaseTable from '@components/common/table/BaseTable';
 import apiConfig from '@constants/apiConfig';
 import useListBase from '@hooks/useListBase';
-import { Button, Empty, Modal, Tag } from 'antd';
+import { Button, Empty, Modal } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { EyeOutlined, UserOutlined } from '@ant-design/icons';
 import AvatarField from '@components/common/form/AvatarField';
@@ -17,8 +17,6 @@ import { commonMessage } from '@locales/intl';
 import { convertUtcToLocalTime } from '@utils';
 import { defineMessages, FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
-import { IconPin } from '@tabler/icons-react';
-import { IconPinnedOff } from '@tabler/icons-react';
 const message = defineMessages({
     objectName: 'news',
 });
@@ -137,21 +135,21 @@ const NewsListPage = () => {
             ),
         },
         { title: <FormattedMessage defaultMessage="Title" />, dataIndex: 'title' },
-        {
-            title: <FormattedMessage defaultMessage="Category" />,
-            width: 120,
-            dataIndex: ['category', 'name'],
-            render: (dataRow) => {
-                return (
-                    <Tag color="#108ee9">
-                        <div style={{ padding: '0 4px', fontSize: 14 }}>{dataRow}</div>
-                    </Tag>
-                );
-            },
-        },
+        // {
+        //     title: <FormattedMessage defaultMessage="Category" />,
+        //     width: 120,
+        //     dataIndex: ['category', 'name'],
+        //     render: (dataRow) => {
+        //         return (
+        //             <Tag color="#108ee9">
+        //                 <div style={{ padding: '0 4px', fontSize: 14 }}>{dataRow}</div>
+        //             </Tag>
+        //         );
+        //     },
+        // },
         {
             title: <FormattedMessage defaultMessage="Created Date" />,
-            width: 160,
+            width: 180,
             dataIndex: 'createdDate',
             render: (createdDate) => {
                 const createdDateLocal = convertUtcToLocalTime(createdDate, DEFAULT_FORMAT, DEFAULT_FORMAT);

@@ -1,14 +1,15 @@
 import React from 'react';
 import routes from '@routes';
 import { FormattedMessage } from 'react-intl';
-import { IconSettings } from '@tabler/icons-react';
+import { IconArticle, IconSettings } from '@tabler/icons-react';
 import apiConfig from '@constants/apiConfig';
+import { UsergroupAddOutlined } from '@ant-design/icons';
 
 export const navMenuConfig = [
     {
         label: <FormattedMessage defaultMessage="Quản lý tài khoản" />,
         key: 'quan-ly-tai-khoan',
-        icon: <IconSettings size={16} />,
+        icon: <UsergroupAddOutlined size={16} />,
         permission: apiConfig.account.getList.permissionCode,
         children: [
             {
@@ -35,7 +36,7 @@ export const navMenuConfig = [
     {
         label: <FormattedMessage defaultMessage="Tin tức" />,
         key: 'tin-tuc',
-        icon: <IconSettings size={16} />,
+        icon: <IconArticle stroke={2} size={16} />,
         permission: apiConfig.news.getList.permissionCode,
         children: [
             {

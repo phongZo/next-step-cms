@@ -196,9 +196,12 @@
     "hook.useListBase.tableColumn.status.title": "Trạng thái",
     "hook.useListBase.tableColumn.status.pending": "Đang chờ",
     "constants.menuConfig.3525936698": "Tin tức",
-    "components.common.elements.form.BaseTooltip.edit": "Xóa {objectName}",
-    "components.common.elements.form.BaseTooltip.delete": "Sửa {objectName}",
+    "components.common.elements.form.BaseTooltip.edit": "Sửa {objectName}",
+    "components.common.elements.form.BaseTooltip.delete": "Xóa {objectName}",
     "hook.useListBase.deleteConfirm.title": "Bạn có chắc chắn muốn xóa {objectName} này không?",
     "hook.useListBase.deleteConfirm.ok": "Có",
-    "hook.useListBase.deleteConfirm.cancel": "Không"
+    "hook.useListBase.deleteConfirm.cancel": "Không",
+    "modules.news.NewsForm.3510152489": "Danh mục tin tức",
+    "hooks.useSaveBase.closeTitle": "Bạn có chắc chắn muốn đóng trang này?",
+    "hooks.useSaveBase.ok": "Có"
 }
