@@ -67,4 +67,6 @@ export const commonMessage = defineMessages({
     phoneExisted: 'Phone existed',
     required: 'Required',
     create: 'Create',
+    candidate: 'Candidate',
+    jobTitle: 'Job title',
 });

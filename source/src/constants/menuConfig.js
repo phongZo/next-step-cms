@@ -17,6 +17,11 @@ export const navMenuConfig = [
                 key: 'admins',
                 path: routes.adminListPage.path,
             },
+            {
+                label: <FormattedMessage defaultMessage="Ứng viên" />,
+                key: 'candidates',
+                path: routes.candidateListPage.path,
+            },
         ],
     },
     {
@@ -32,7 +37,6 @@ export const navMenuConfig = [
             },
         ],
     },
-
     {
         label: <FormattedMessage defaultMessage="Tin tức" />,
         key: 'tin-tuc',
