@@ -153,3 +153,6 @@ export const PHONE_MAX_LENGTH = 10;
 export const ERROR_ACCOUNT_EXIST = 'ERROR-ACCOUNT-0001';
 
 export const NEWS_OPTIONS = [{ label: commonMessage.news, value: 1 }];
+
+export const CANDIDATE_ACTIVE = 1;
+export const CANDIDATE_LOCK = -1;
