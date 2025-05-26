@@ -1,7 +1,7 @@
 import React from 'react';
 import routes from '@routes';
 import { FormattedMessage } from 'react-intl';
-import { IconArticle, IconSettings } from '@tabler/icons-react';
+import { IconArticle, IconBuildingBank, IconSettings } from '@tabler/icons-react';
 import apiConfig from '@constants/apiConfig';
 import { UsergroupAddOutlined } from '@ant-design/icons';
 
@@ -47,6 +47,19 @@ export const navMenuConfig = [
                 label: <FormattedMessage defaultMessage="Danh sách tin tức" />,
                 key: 'news',
                 path: routes.newsListPage.path,
+            },
+        ],
+    },
+    {
+        label: <FormattedMessage defaultMessage="Công ty" />,
+        key: 'cong-ty',
+        icon: <IconBuildingBank stroke={2} size={16} />,
+        permission: apiConfig.company.getList.permissionCode,
+        children: [
+            {
+                label: <FormattedMessage defaultMessage="Danh sách công ty" />,
+                key: 'company',
+                path: routes.companyListPage.path,
             },
         ],
     },

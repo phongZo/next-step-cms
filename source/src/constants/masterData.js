@@ -1,14 +1,21 @@
-import { STATUS_ACTIVE, STATUS_INACTIVE, STATUS_PENDING,PROVINCE_KIND,DISTRICT_KIND,VILLAGE_KIND } from '@constants';
-import { defineMessages } from 'react-intl';
 import {
-    nationKindMessage,
-    actionMessage,
-} from './intl';
+    STATUS_ACTIVE,
+    STATUS_INACTIVE,
+    STATUS_PENDING,
+    PROVINCE_KIND,
+    DISTRICT_KIND,
+    VILLAGE_KIND,
+    CANDIDATE_ACTIVE,
+    CANDIDATE_LOCK,
+} from '@constants';
+import { defineMessages } from 'react-intl';
+import { nationKindMessage, actionMessage } from './intl';
 
 const commonMessage = defineMessages({
     statusActive: 'Active',
     statusPending: 'Pending',
     statusInactive: 'Inactive',
+    statusLock: 'Lock',
 });
 
 export const languageOptions = [
@@ -67,7 +74,6 @@ export const kindPost = [
         label: 'Story',
         color: 'blue',
     },
-   
 ];
 
 export const settingGroups = {
@@ -97,4 +103,9 @@ export const actionOptions = [
         label: actionMessage.contactForm,
     },
     { value: 2, label: actionMessage.navigation },
+];
+
+export const candidateStatusOptions = [
+    { value: CANDIDATE_ACTIVE, label: commonMessage.statusActive, color: '#00A648' },
+    { value: CANDIDATE_LOCK, label: commonMessage.statusLock, color: '#CC0000' },
 ];
